@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Vorbe de duh</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}" />
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+
+        $("button").click(function(){
+            $.ajax({
+                url: "http://localhost:5000/random" ,
+                success: function(data){
+                        $('body').css("background-image", "url("+data.image+")");
+                        $('#quote span').html(data.quote + "<br>" + data.author);
+          
+                        $('body').append('<audio autoplay="true" src="data:audio/mp3;base64,'+ data.audio + '"></audio>');
+                     }
+        });
+
+
+        });
+
+        $("body").one("load", function() {
+
+            }).each(function() {
+                if(this.complete) $(this).load();
+                });
+
+    });
+
+    </script>
+</head>
+<body>
+<div id="quote">
+    <span>Vorbe de duh</span>
+</div>
+<div id="button"><button> > </button></div>
+
+</body>
+</html>
