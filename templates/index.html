@@ -10,7 +10,7 @@
 
         $("button").click(function(){
             $.ajax({
-                url: "http://vorbededuh.azurewebsites.com/random" ,
+                url: "http://vorbededuh.azurewebsites.net/random" ,
                 success: function(data){
                         $('body').css("background-image", "url("+data.image+")");
                         $('#quote span').html(data.quote + "<br>" + data.author);
