@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, url_for
 import pyodbc, random, requests, http.client, base64
 from xml.etree import ElementTree
 
@@ -103,4 +103,5 @@ def get_quote():
 
 
 if __name__ == '__main__':
+  app.secret_key = 'A0Zr98j/3yX R~XHH!jmN]LWX/,?RT'
   app.run()
