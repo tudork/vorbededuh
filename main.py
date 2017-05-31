@@ -92,10 +92,10 @@ def get_quote():
   author, quote = random_quote()
   gender = get_gender(author.split(' ')[0])["gender"]
   audio = get_audio(quote, gender)
-  file = open("D:\\b.mp3", "wb").write(audio)
+
 
   audio = base64.b64encode(audio)
-  print(audio)
+
   return jsonify({"author": author, "quote": quote, "gender": gender,
                   "image": random.choice(a["value"])["contentUrl"],
                   "audio": audio.decode('utf-8')})
