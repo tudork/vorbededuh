@@ -10,11 +10,11 @@
 
         $("button").click(function(){
             $.ajax({
-                url: "http://localhost:5000/random" ,
+                url: "http://vorbededuh.azureapps.com/random" ,
                 success: function(data){
                         $('body').css("background-image", "url("+data.image+")");
                         $('#quote span').html(data.quote + "<br>" + data.author);
-          
+
                         $('body').append('<audio autoplay="true" src="data:audio/mp3;base64,'+ data.audio + '"></audio>');
                      }
         });
